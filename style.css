@@ -121,7 +121,7 @@
 
 /*文字渐变动画*/
 
-.showcase:hover .p-txt {
+.showcase .p-txt {
     background-repeat: repeat-x;
     background-image: -webkit-gradient(linear, 100% 0%, 0% 100%, from(#99507E), to(#99507E), color-stop(0.5, #27DDE3));
     -webkit-background-clip: text;
