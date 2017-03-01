@@ -54,7 +54,7 @@
     right: 21px;
     bottom: 21px;
     transition: all .6s;
-    opacity: .8;
+    opacity: 0;
     z-index: 100;
 }
 
@@ -73,6 +73,7 @@
 .showcase:hover:before,
 .showcase:hover:after {
     transform: scale(1, 1);
+    opacity: .8;
 }
 
 
