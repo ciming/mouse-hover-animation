@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column
+}
+
+.tip {
+    margin-top: 20px;
+}
+
+.showcase {
+    width: 315px;
+    height: 267px;
+    overflow: hidden;
+    position: relative;
+}
+
+.showcase img {
+    display: block;
+    transition: all .6s;
+    position: absolute;
+    z-index: 10
+}
+
+
+/*图片模糊效果*/
+
+.showcase:hover img {
+    filter: blur(5px);
+}
+
+
+/*线条动画*/
+
+.showcase:before,
+.showcase:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 21px;
+    top: 21px;
+    right: 21px;
+    bottom: 21px;
+    transition: all .6s;
+    opacity: .8;
+    z-index: 100;
+}
+
+.showcase:before {
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: scale(0, 1);
+}
+
+.showcase:after {
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: scale(1, 0);
+}
+
+.showcase:hover:before,
+.showcase:hover:after {
+    transform: scale(1, 1);
+}
+
+
+/*文字显示*/
+
+.showcase .p-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column
+}
+
+.showcase .p-txt {
+    font-size: 24px;
+    transform: translate(0, 20px);
+    width: 100%;
+    text-align: center;
+}
+
+.showcase a {
+    font-weight: bold;
+    color: #90af79;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.showcase .p-txt,
+.showcase a {
+    transform: translate(0, 20px);
+    opacity: 0;
+    transition: all .3s;
+}
+
+.showcase:hover .p-txt,
+.showcase:hover a {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+
+/*文字渐变动画*/
+
+.showcase:hover .p-txt {
+    background-repeat: repeat-x;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 100%, from(#99507E), to(#99507E), color-stop(0.5, #27DDE3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: tweened-animetion;
+}
+
+@keyframes tweened-animetion {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: 315px;
+    }
+}
+
+.showcase:hover a {
+    animation-delay: .3s;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-name: color-change-animation;
+}
+
+@keyframes color-change-animation {
+    0% {
+        color: #90af79
+    }
+    10% {
+        color: #3ac5d2;
+    }
+    20% {
+        color: #90af79;
+    }
+    30% {
+        color: #3ac5d2;
+    }
+    40% {
+        color: #90af79;
+    }
+    70% {
+        color: #90af79;
+    }
+    90% {
+        color: #3ac5d2;
+    }
+    100% {
+        color: #90af79;
+    }
+}
